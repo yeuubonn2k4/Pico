@@ -2,7 +2,7 @@ Find the flag being held on this server to get ahead of the competition http://m
 
 Ấn vào link sẽ hiện ra 
 
-![google](http://mercury.picoctf.net:15931/index.php?)
+![image](https://github.com/yeuubonn2k4/Pico/assets/161863346/fa5054e2-5840-4968-8e3f-600edde1ed7f)
 
 CTRL + U -> <!doctype html>
 <html>
