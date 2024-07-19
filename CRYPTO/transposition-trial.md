@@ -26,5 +26,5 @@ s_i -> is_
 
 Flag:
 
-` The flag is picoCTF{7R4N5P051N6_15_3XP3N51V3_A9AFB178} `
+` picoCTF{7R4N5P051N6_15_3XP3N51V3_A9AFB178} `
 
