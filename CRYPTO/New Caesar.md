@@ -93,7 +93,7 @@ def decrypt(enc, key):
     
     return dec
 
-ciphertext = "kjlijdliljhdjdhfkfkhhjkkhhkihlhnhghekfhmhjhkhfhekfkkkjkghghjhlhghmhhhfkikfkfhm"
+ciphertext = "lkmjkemjmkiekeijiiigljlhilihliikiliginliljimiklligljiflhiniiiniiihlhilimlhijil"
 
 for k in ALPHABET:
    
@@ -109,11 +109,11 @@ for k in ALPHABET:
 
 - Output :
 
-Key: e, Plaintext: et_tu?_1ac5f3d7920a85610afeb2572831daa8
-Key: f, Plaintext: TcNcd.N PR$U"S&(!/P'$% /PUTQ!$&!'" SPP'
+Key: f, Plaintext: et_tu?_431db62c5618cd75f1d0b83832b67b46
+Key: g, Plaintext: TcNcd.N#" SQ%!R$% 'RS&$U S/Q'"'"!Q%&Q#%
 
 - Flag :
 
 `
-picoCTF{et_tu?_1ac5f3d7920a85610afeb2572831daa8}
+picoCTF{et_tu?_431db62c5618cd75f1d0b83832b67b46}
 `
